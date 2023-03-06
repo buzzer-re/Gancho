@@ -43,6 +43,7 @@ jobs:
 
     - name: Create Release and Zip Binaries
       run: |
+        Get-ChildItem -Recurse
         mkdir librelease      
         Compress-Archive -LiteralPath $env:X86_BUILD_PATH/distribute -DestinationPath librelease/Gancholib-x86.zip 
         Compress-Archive -LiteralPath $env:X64_BUILD_PATH/distribute -DestinationPath librelease/Gancholib-x64.zip 
