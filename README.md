@@ -30,7 +30,7 @@ It's very simple and just supports install the hook, so you can't remove (yet).
 
 # Install
 
-Go the the [Release](https://github.com/buzzer-re/Gancho/releases) and grab your flavor, the files contains everything you need to setup your project.
+Go the the [Release](https://github.com/buzzer-re/Gancho/releases) and grab your flavor, the zip files contains the Gancho dll and dependencies and the the headers needed to include in your project.
 
 
 
