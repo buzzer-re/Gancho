@@ -15,7 +15,7 @@ jobs:
     - name: Install Visual Studio Build Tools
       uses: microsoft/setup-msbuild@v1.3.1
       with:
-    #    vs-version: '22.0'
+        vs-version: '17.4.1'
         vs-prerelease: true
 
     # Install vcpkg
@@ -36,4 +36,4 @@ jobs:
     - name: Build Gancho
       run: |
         cd Gancho
-        msbuild Gancho.sln /p:Configuration=Release /p:Platform=${{ matrix.platform }}
+        msbuizld Gancho.sln /p:Configuration=Release /p:Platform=${{ matrix.platform }}
