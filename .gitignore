@@ -3,3 +3,4 @@ x64/
 *.pdb
 *.exe
 Release/
+Debug/
