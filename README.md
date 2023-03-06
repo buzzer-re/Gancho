@@ -9,6 +9,8 @@ A tiny and simple hook library that I wrote to use in the [Shinigami](https://gi
 Here is a example:
 
 ```cpp
+#include "Gancho/HookManager.h"
+
 hKernelBase = LoadLibraryA("kernelbase.dll");
 if (hKernelBase == NULL) 
 {
