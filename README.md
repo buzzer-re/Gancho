@@ -3,14 +3,14 @@
 [![CD](https://github.com/buzzer-re/Gancho/actions/workflows/cd.yml/badge.svg)](https://github.com/buzzer-re/Gancho/actions/workflows/cd.yml)
 
 
-Gancho is a small and straightforward hook library that I developed specifically for the [Shinigami](https://github.com/buzzer-re/Shinigami) project. Gancho's operation is based on the concept of trampoline functions. This involves overwriting the original code with a jump to the hooked code, which execute your code, while still enabling the original code to run as intended. For greater accuracy in the hooking process, Gancho relies on [Zydis](https://github.com/zyantific/zydis) disassembler.
+Gancho is a small and straightforward hook library that I developed specifically for the [Shinigami](https://github.com/buzzer-re/Shinigami) project. Gancho's operation is based on the concept of trampoline functions. This involves overwriting the original code with a jump to the hooked code. For greater accuracy in the hooking process, Gancho relies on [Zydis](https://github.com/zyantific/zydis) disassembler.
 
 # Usage
 
 Here is an example:
 
 ```cpp
-#include "HookManager/HookManager.h"
+#include "Gancho/HookManager.h"
 #include <iostream>
 
 // Define a function pointer for the original VirtualAlloc function
