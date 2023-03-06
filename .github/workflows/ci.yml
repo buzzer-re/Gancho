@@ -1,0 +1,39 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        platform: [x86, x64]
+    steps:
+    - uses: actions/checkout@v2
+  
+  
+    - name: Install Visual Studio Build Tools
+      uses: microsoft/setup-msbuild@v1.0.2
+      with:
+        vs-version: '17.0'
+        include-prerelease: true
+
+    # Install vcpkg
+    - name: Install vcpkg
+      run: |
+        git clone https://github.com/Microsoft/vcpkg.git
+        cd vcpkg
+        .\bootstrap-vcpkg.bat
+
+    # Install vcpkg dependencies
+    - name: Install vcpkg dependencies
+      run: |
+        cd vcpkg
+        .\vcpkg install zydis:${{ matrix.platform }}-windows
+        .\vcpkg integrate install
+
+    # Build
+    - name: Build Gancho
+      run: |
+        cd Shinigami
+        msbuild Gancho.sln /t:Gancho /p:Configuration=Release /p:Platform=${{ matrix.platform }}
