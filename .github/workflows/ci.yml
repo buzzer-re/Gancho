@@ -15,7 +15,7 @@ jobs:
     - name: Install Visual Studio Build Tools
       uses: microsoft/setup-msbuild@v1.0.2
       with:
-        vs-version: '17.0'
+        vs-version: '22.0'
         include-prerelease: true
 
     # Install vcpkg
