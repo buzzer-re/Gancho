@@ -38,7 +38,6 @@ jobs:
 
     - name: Build Gancho 
       run: |
-        cd Gancho
         msbuild Gancho.sln /p:Configuration=Release /p:Platform=x64
         msbuild Gancho.sln /p:Configuration=Release /p:Platform=x86
 
