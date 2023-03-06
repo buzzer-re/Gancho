@@ -35,4 +35,4 @@ jobs:
     - name: Build Gancho
       run: |
         cd Gancho
-        msbuild Gancho.sln /t:Gancho /p:Configuration=Release /p:Platform=${{ matrix.platform }}
+        msbuild /t:Gancho /p:Configuration=Release /p:Platform=${{ matrix.platform }}
