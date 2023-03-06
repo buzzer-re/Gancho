@@ -1,8 +1,8 @@
 name: Release
 
 env:
-  X86_BUILD_PATH: "Gancho/Release"
-  X64_BUILD_PATH: "Gancho/x64/Release"
+  X86_BUILD_PATH: "Release"
+  X64_BUILD_PATH: "x64/Release"
   
 on: [push]
 #on:
