@@ -43,9 +43,9 @@ jobs:
 
     - name: Create Release and Zip Binaries
       run: |
-        mkdir release      
-        Compress-Archive -LiteralPath $env:X86_BUILD_PATH/distribute -DestinationPath release/Gancholib-x86.zip 
-        Compress-Archive -LiteralPath $env:X64_BUILD_PATH/distribute -DestinationPath release/Gancholib-x64.zip 
+        mkdir librelease      
+        Compress-Archive -LiteralPath $env:X86_BUILD_PATH/distribute -DestinationPath librelease/Gancholib-x86.zip 
+        Compress-Archive -LiteralPath $env:X64_BUILD_PATH/distribute -DestinationPath librelease/Gancholib-x64.zip 
       # Create a new release
       
     - name: Create Release
@@ -67,7 +67,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: release/Gancholib-x86.zip
+        asset_path: librelease/Gancholib-x86.zip
         asset_name: Gancholib-x86.zip
         asset_content_type: application/zip
 
@@ -78,6 +78,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: release/Gancholib-x64.zip
+        asset_path: librelease/Gancholib-x64.zip
         asset_name: Gancholib-x64.zip
         asset_content_type: application/zip
