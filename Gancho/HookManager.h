@@ -32,12 +32,14 @@ class __declspec(dllexport) HookManager
 public:
     HookManager();
     LPVOID AddHook(_In_ BYTE* Src, _In_ BYTE* Dst);
+    VOID DisassambleAt(_In_ ULONG_PTR* Address, _In_ SIZE_T NumberOfInstructions);
+
 private:
     LPVOID Hook64(_In_ BYTE* Src, _In_ BYTE* Dst);
     LPVOID Hook32(_In_ BYTE* Src, _In_ BYTE* Dst);
 
 private:
-    ZydisDecoder zDecoder;
+    ZydisDecoder ZDecoder;
 
     std::unordered_map<LPVOID, Hook> hooks;
 };
